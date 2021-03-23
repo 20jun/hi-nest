@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
-import { MoviesController } from './movies/movies.controller';
+import { MoviesModule } from './movies/movies.module';
+import { AppController } from './app.controller';
 
 // 데코레이터 : 클래스에 함수 기능을 추가할 수 있음
 @Module({
-  imports: [],
+  imports: [MoviesModule],
   // 컨트롤러 : url을 가져오고 함수를 실행
-  controllers: [MoviesController],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {}
